@@ -1,5 +1,6 @@
 package com.example.universitystudentportal.customeAnnotations;
 
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
@@ -7,11 +8,9 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD,ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = RoleValidator.class)
-public @interface ValidateRole {
-
-    public String message() default "Invalid Role Please Try Again : It should be either ADMIN ,STUDENT or LECTURER ";
-
+@Constraint(validatedBy = EnrollmentValidator.class)
+public @interface ValidateEnrollmentType {
+    public String message() default  "Invalid TYPE : It should be either BLOCK ,CONVENTIONAL or WEEKEND";
 
     Class<?>[] groups() default {};
 

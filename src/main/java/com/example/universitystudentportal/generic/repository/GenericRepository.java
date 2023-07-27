@@ -1,6 +1,7 @@
 package com.example.universitystudentportal.generic.repository;
 
 import com.example.universitystudentportal.model.BaseID;
+import com.example.universitystudentportal.model.FeesPayment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
@@ -12,6 +13,8 @@ import java.util.Optional;
  */
 public interface GenericRepository <T extends BaseID> extends JpaRepository<T,Long> {
 
+
+//T findByUsername(String firstName);
 
 
 }

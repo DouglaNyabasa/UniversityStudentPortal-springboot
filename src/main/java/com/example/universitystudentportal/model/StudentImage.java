@@ -5,25 +5,23 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-/**
- *
- * @author Douglas Nybasa
- * created on 7/20/2023
- */
-@Data
 @Entity
+@Data
+@Table(name = "image_Data")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "module_table")
-public class Module extends BaseID implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class StudentImage extends BaseID implements Serializable {
 
-    private String moduleName;
-
-    private Integer moduleMark;
+    private String name;
+    private String type;
+    @Lob
+    @Column(name = "imagedata",length = 1000)
+    private byte[] imageData;
 }

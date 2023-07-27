@@ -1,10 +1,7 @@
 package com.example.universitystudentportal.repository;
 
 import com.example.universitystudentportal.generic.repository.GenericRepository;
-import com.example.universitystudentportal.model.Lecturer;
+import com.example.universitystudentportal.model.Salary;
 
-
-public interface LecturerRepository extends GenericRepository<Lecturer> {
-
-
+public interface SalaryRepository extends GenericRepository<Salary> {
 }

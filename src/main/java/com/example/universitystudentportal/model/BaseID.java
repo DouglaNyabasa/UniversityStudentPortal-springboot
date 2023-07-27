@@ -19,7 +19,7 @@ import java.time.Instant;
 @Data
 @MappedSuperclass
 @EqualsAndHashCode
-public abstract class BaseID {
+public abstract class  BaseID {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")

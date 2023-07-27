@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.Arrays;
 import java.util.List;
 
-public class UserValidator implements ConstraintValidator<ValidateRole,String> {
+public class RoleValidator implements ConstraintValidator<ValidateRole,String> {
     @Override
     public boolean isValid(String role, ConstraintValidatorContext constraintValidatorContext) {
 

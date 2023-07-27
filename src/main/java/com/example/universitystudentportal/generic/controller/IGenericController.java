@@ -3,7 +3,7 @@ package com.example.universitystudentportal.generic.controller;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 
-public interface IGenericController<T,ID extends String> {
+public interface IGenericController<T,ID extends Long> {
 
     ResponseEntity<T> create(T t);
     ResponseEntity<Page<T>> getAll(int page, int size);

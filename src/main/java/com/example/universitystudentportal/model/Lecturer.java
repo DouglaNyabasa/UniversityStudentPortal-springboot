@@ -49,6 +49,10 @@ public class Lecturer extends BaseID  implements Serializable {
     @Column(name = "Email",unique = true,nullable = false)
     private String email;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "salary_id")
+    private Salary salary;
+
 
     @NotBlank(message = "password should not be blank !!!")
     @Column(name = "Password",nullable = false)

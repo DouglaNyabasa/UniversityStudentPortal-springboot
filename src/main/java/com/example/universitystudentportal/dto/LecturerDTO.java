@@ -1,7 +1,9 @@
 package com.example.universitystudentportal.dto;
 
 import com.example.universitystudentportal.generic.dto.GenericDTO;
+import com.example.universitystudentportal.model.Module;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,8 +15,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentSignUpDTO extends GenericDTO {
+public class LecturerDTO extends GenericDTO {
 
-    private String address;
-    private String password;
+    private Module module;
+
+
 }

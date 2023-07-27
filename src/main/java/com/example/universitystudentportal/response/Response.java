@@ -66,11 +66,6 @@ public class Response <T> implements Serializable {
         return this;
     }
 
-    /**
-     *
-     * @param data
-     * @return
-     */
     @JsonIgnore
     public Response<T> buildSuccessResponse(final T data) {
         this.message = "Success";
@@ -124,12 +119,6 @@ public class Response <T> implements Serializable {
         return this;
     }
 
-    /**
-     *
-     * @param message
-     * @param data
-     * @return
-     */
     @JsonIgnore
     public Response<T> buildErrorResponse(String message, final T data) {
         this.message = message;

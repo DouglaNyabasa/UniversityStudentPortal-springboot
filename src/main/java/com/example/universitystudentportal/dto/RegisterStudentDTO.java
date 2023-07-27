@@ -2,7 +2,6 @@ package com.example.universitystudentportal.dto;
 
 import com.example.universitystudentportal.generic.dto.GenericDTO;
 import com.example.universitystudentportal.model.EnrollmentType;
-import com.example.universitystudentportal.model.Level;
 import com.example.universitystudentportal.model.StudentImage;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,11 +18,12 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentRequest extends GenericDTO {
+public class RegisterStudentDTO extends GenericDTO {
+
     private String address;
     private Date dateOfBirth;
     @Enumerated
     private EnrollmentType enrollmentType;
     private StudentImage studentImage;
-    private Level level;
+    private String password;
 }
