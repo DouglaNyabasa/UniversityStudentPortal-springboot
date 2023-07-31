@@ -1,7 +1,9 @@
-package com.example.universitystudentportal.generic.service;
+package com.example.universitystudentportal.generics.service;
 
+import com.example.universitystudentportal.generics.dto.GenericDTO;
+import com.example.universitystudentportal.generics.mapper.EntityMapper;
 import com.example.universitystudentportal.model.BaseID;
-import com.example.universitystudentportal.generic.repository.GenericRepository;
+import com.example.universitystudentportal.generics.repository.GenericRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -11,7 +13,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 import java.util.Optional;
 
 
@@ -23,7 +24,7 @@ import java.util.Optional;
  * created on 7/20/2023
  */
 
-public abstract class GenericService <T extends BaseID, ID extends Long> implements IGenericService<T, ID>{
+public abstract class GenericService <T extends BaseID, ID extends Long, DTO extends GenericDTO> implements IGenericService<T, ID>{
 
     private final GenericRepository<T> repository;
     private final Logger logger = LoggerFactory.getLogger(GenericService.class);
@@ -36,7 +37,7 @@ public abstract class GenericService <T extends BaseID, ID extends Long> impleme
     public ResponseEntity<Object> save(T entity) {
         T savedEntity = repository.save(entity);
            logger.info("Saving entity {}", entity);
-           return   ResponseEntity.status(HttpStatus.CREATED).body("Product successfully created" + savedEntity);
+           return   ResponseEntity.status(HttpStatus.CREATED).body("Entity successfully created" + savedEntity);
 
     }
     @Override
@@ -58,6 +59,20 @@ public abstract class GenericService <T extends BaseID, ID extends Long> impleme
             return ResponseEntity.noContent().build();
         }
 
+//    @Override
+//    public ResponseEntity<Object> update(T entityToUpdate) {
+//        // TODO Auto-generated method stub
+//        System.out.println("entityToUpdate = " + entityToUpdate);
+//        boolean found = repository.findById(entityToUpdate.getId()).isPresent();
+//        if (!found)
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("FAILED TO UPDATE");
+//        DTO dto = mapper.toDto(entityToUpdate);
+//        T update = mapper.partialUpdate(entityToUpdate, dto);
+//        System.out.println("update = " + update);
+//        repository.save(update);
+//        return  ResponseEntity.status(HttpStatus.OK).body("entity successfully updated");
+//
+//    }
     @Override
     public ResponseEntity<T> update(T t, ID id) {
             return repository.findById(id).map(existingT -> {
@@ -79,6 +94,21 @@ public abstract class GenericService <T extends BaseID, ID extends Long> impleme
         return optionalEntity.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    //    @Override
+    //    public ResponseEntity<Object> update(T entityToUpdate) {
+    //        // TODO Auto-generated method stub
+    //        System.out.println("entityToUpdate = " + entityToUpdate);
+    //        boolean found = repository.findById(entityToUpdate.getId()).isPresent();
+    //        if (!found)
+    //            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("FAILED TO UPDATE");
+    //        DTO dto = mapper.toDto(entityToUpdate);
+    //        T update = mapper.partialUpdate(entityToUpdate, dto);
+    //        System.out.println("update = " + update);
+    //        repository.save(update);
+    //        return  ResponseEntity.status(HttpStatus.OK).body("entity successfully updated");
+    //
+    //    }
 
 //    @Override
 //    public ResponseEntity<Object> findByName(String name) {

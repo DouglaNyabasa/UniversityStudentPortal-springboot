@@ -1,4 +1,4 @@
-package com.example.universitystudentportal.controller;
+package com.example.universitystudentportal.resource;
 
 import com.example.universitystudentportal.dto.PaymentRequestDTO;
 import com.example.universitystudentportal.dto.PaymentResponse;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-public class PaymentController {
+public class PaymentResource {
 
 
     private FeesPaymentService feesPaymentService;

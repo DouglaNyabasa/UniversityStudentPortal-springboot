@@ -1,4 +1,4 @@
-package com.example.universitystudentportal.controller;
+package com.example.universitystudentportal.resource;
 
 import com.example.universitystudentportal.service.ImageServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -11,11 +11,11 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping
-public class ImageController {
+public class ImageResource {
 
     private final ImageServiceImpl imageServiceImpl;
 
-    public ImageController(ImageServiceImpl imageServiceImpl) {
+    public ImageResource(ImageServiceImpl imageServiceImpl) {
         this.imageServiceImpl = imageServiceImpl;
     }
 

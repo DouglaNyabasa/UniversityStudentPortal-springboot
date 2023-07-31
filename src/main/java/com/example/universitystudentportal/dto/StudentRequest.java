@@ -1,6 +1,6 @@
 package com.example.universitystudentportal.dto;
 
-import com.example.universitystudentportal.generic.dto.GenericDTO;
+import com.example.universitystudentportal.generics.dto.GenericDTO;
 import com.example.universitystudentportal.model.EnrollmentType;
 import com.example.universitystudentportal.model.Level;
 import com.example.universitystudentportal.model.StudentImage;

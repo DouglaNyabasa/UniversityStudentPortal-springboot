@@ -1,10 +1,7 @@
-package com.example.universitystudentportal.generic.repository;
+package com.example.universitystudentportal.generics.repository;
 
 import com.example.universitystudentportal.model.BaseID;
-import com.example.universitystudentportal.model.FeesPayment;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 /**
  *
@@ -12,6 +9,7 @@ import java.util.Optional;
  * created on 7/20/2023
  */
 public interface GenericRepository <T extends BaseID> extends JpaRepository<T,Long> {
+
 
 
 //T findByUsername(String firstName);

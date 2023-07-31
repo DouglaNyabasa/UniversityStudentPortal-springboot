@@ -19,7 +19,6 @@ import java.io.Serializable;
 @Data
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Table(name = "lecturer_table")
 public class Lecturer extends BaseID  implements Serializable {
@@ -39,6 +38,10 @@ public class Lecturer extends BaseID  implements Serializable {
     @NotBlank(message = "role should not be blank !!!")
     @Column(name = "Role",nullable = false)
     private Role role;
+
+    @OneToOne
+    @NotBlank(message = "please enter your department name !!!")
+    private Department department;
 
     @OneToOne
     @NotBlank(message = "the module you teach should not be blank !!!")
@@ -66,6 +69,13 @@ public class Lecturer extends BaseID  implements Serializable {
     @Column(name = "Gender",nullable = false)
     private Gender gender;
 
+    private int availableSickLeave;
+    private int availableVacationLeave;
+    private int availableUnpaidLeave;
 
-
+    public Lecturer() {
+        this.availableSickLeave = 14;
+        this.availableVacationLeave = 30;
+        this.availableUnpaidLeave = 365;
+    }
 }

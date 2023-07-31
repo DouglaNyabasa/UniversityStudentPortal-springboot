@@ -1,6 +1,6 @@
 package com.example.universitystudentportal.dto;
 
-import com.example.universitystudentportal.generic.dto.GenericDTO;
+import com.example.universitystudentportal.generics.dto.GenericDTO;
 import lombok.Data;
 
 
@@ -12,6 +12,7 @@ import lombok.Data;
  */
 @Data
 public class AdminDTO extends GenericDTO {
+
 
 
 }

@@ -2,6 +2,9 @@ package com.example.universitystudentportal.service;
 
 import com.example.universitystudentportal.dto.PaymentRequestDTO;
 import com.example.universitystudentportal.dto.PaymentResponse;
+import com.example.universitystudentportal.generics.repository.GenericRepository;
+import com.example.universitystudentportal.generics.service.GenericService;
+import com.example.universitystudentportal.mapper.FeesPaymentMapper;
 import com.example.universitystudentportal.model.FeesPayment;
 import com.example.universitystudentportal.model.PaymentMode;
 import com.example.universitystudentportal.repository.FeesPaymentRepository;
@@ -12,12 +15,14 @@ import java.time.Instant;
 
 @Service
 @Log4j2
-public class FeesPaymentService {
+public class FeesPaymentService extends GenericService<FeesPayment,Long,PaymentRequestDTO> {
     private FeesPaymentRepository feesPaymentRepository;
 
-    public FeesPaymentService(FeesPaymentRepository feesPaymentRepository) {
+    protected FeesPaymentService(GenericRepository<FeesPayment> repository, FeesPaymentRepository feesPaymentRepository) {
+        super(repository);
         this.feesPaymentRepository = feesPaymentRepository;
     }
+
 
     public Long doPayment(PaymentRequestDTO paymentRequestDTO){
         log.info("Recording payment details: {}", paymentRequestDTO);

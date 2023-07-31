@@ -1,17 +1,17 @@
-package com.example.universitystudentportal.generic.dto;
+package com.example.universitystudentportal.generics.dto;
 
 import com.example.universitystudentportal.model.Gender;
 import com.example.universitystudentportal.model.Role;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
+@EqualsAndHashCode
+@MappedSuperclass
 @NoArgsConstructor
-@Builder
-public class GenericDTO {
+public class GenericDTO implements Serializable {
 
     private Long id;
 
