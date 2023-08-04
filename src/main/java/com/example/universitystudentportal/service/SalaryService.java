@@ -3,7 +3,6 @@ package com.example.universitystudentportal.service;
 import com.example.universitystudentportal.dto.SalaryDTO;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.SalaryMapper;
 import com.example.universitystudentportal.model.Lecturer;
 import com.example.universitystudentportal.model.Salary;
 import com.example.universitystudentportal.model.Taxation;

@@ -1,5 +1,6 @@
 package com.example.universitystudentportal.generics.resource;
 
+import com.example.universitystudentportal.dto.LoginRequest;
 import com.example.universitystudentportal.generics.dto.GenericDTO;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
@@ -13,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-public abstract class GenericResource<T extends BaseID, ID extends Long, DTO extends GenericDTO, R extends GenericRepository<T>, S extends GenericService<T,ID,DTO>> implements IGenericResource<T,ID> {
+public  class GenericResource<T extends BaseID, ID extends Long, DTO extends GenericDTO, R extends GenericRepository<T>, S extends GenericService<T,ID,DTO>> implements IGenericResource<T,ID> {
 
     protected S service;
     @PostMapping("/")
@@ -58,13 +59,15 @@ public abstract class GenericResource<T extends BaseID, ID extends Long, DTO ext
 
     }
 
-//    @PutMapping("/")
-//    @Operation(
-//            tags = {"ALL ENDPOINTS"}
-//    )
-//    public ResponseEntity<T> update(@RequestBody T t, ID id) {
-//        return service.update();
-//    }
+    @PutMapping("/")
+    @Operation(
+            tags = {"ALL ENDPOINTS"}
+    )
+    @Override
+    public ResponseEntity<T> update(T t, ID id) {
+        return null;
+    }
+
 
     @Override
     @Operation(
@@ -72,6 +75,11 @@ public abstract class GenericResource<T extends BaseID, ID extends Long, DTO ext
     )
     public ResponseEntity<T> findByID(@PathVariable("id") ID id) {
         return  service.findById(id);
+    }
+
+    @Override
+    public ResponseEntity<T> signIn(LoginRequest loginRequest) {
+        return null;
     }
 
 

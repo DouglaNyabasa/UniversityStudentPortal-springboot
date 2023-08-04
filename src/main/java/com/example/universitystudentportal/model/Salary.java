@@ -9,7 +9,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
-
+/**
+ *
+ * @author Douglas Nybasa
+ * created on 7/20/2023
+ */
 @Data
 @Entity
 @AllArgsConstructor

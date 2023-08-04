@@ -4,7 +4,6 @@ import com.example.universitystudentportal.dto.PaymentRequestDTO;
 import com.example.universitystudentportal.dto.PaymentResponse;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.FeesPaymentMapper;
 import com.example.universitystudentportal.model.FeesPayment;
 import com.example.universitystudentportal.model.PaymentMode;
 import com.example.universitystudentportal.repository.FeesPaymentRepository;

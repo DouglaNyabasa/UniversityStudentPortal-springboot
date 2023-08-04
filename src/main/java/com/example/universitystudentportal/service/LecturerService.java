@@ -2,7 +2,6 @@ package com.example.universitystudentportal.service;
 import com.example.universitystudentportal.dto.LecturerDTO;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.LecturerMapper;
 import com.example.universitystudentportal.model.Lecturer;
 import com.example.universitystudentportal.repository.LecturerRepository;
 import org.springframework.http.HttpStatus;

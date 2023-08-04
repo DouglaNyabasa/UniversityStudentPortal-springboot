@@ -3,7 +3,6 @@ import com.example.universitystudentportal.dto.RegisterStudentDTO;
 import com.example.universitystudentportal.dto.StudentRequest;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.StudentMapper;
 import com.example.universitystudentportal.model.Student;
 import com.example.universitystudentportal.repository.*;
 import org.springframework.http.HttpStatus;

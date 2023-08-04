@@ -21,6 +21,8 @@ import java.time.Instant;
 @EqualsAndHashCode
 public abstract class  BaseID {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
@@ -36,4 +38,6 @@ public abstract class  BaseID {
     @JsonIgnore
     @Column(name = "last_modified_date")
     private Instant updatedDate = Instant.now();
+
+
 }

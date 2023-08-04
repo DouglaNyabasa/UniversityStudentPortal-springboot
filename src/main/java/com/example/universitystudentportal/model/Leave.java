@@ -10,7 +10,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDate;
-
+/**
+ *
+ * @author Douglas Nybasa
+ * created on 7/20/2023
+ */
 @Data
 @Entity
 @AllArgsConstructor

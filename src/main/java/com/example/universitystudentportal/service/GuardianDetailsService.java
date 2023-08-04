@@ -1,10 +1,8 @@
 package com.example.universitystudentportal.service;
 
 import com.example.universitystudentportal.dto.GuardianDTO;
-import com.example.universitystudentportal.generics.mapper.EntityMapper;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.GuardianDetailsMapper;
 import com.example.universitystudentportal.model.GuardianDetails;
 import com.example.universitystudentportal.repository.GuardianDetailsRepository;
 import org.springframework.http.HttpStatus;

@@ -3,7 +3,6 @@ package com.example.universitystudentportal.service;
 import com.example.universitystudentportal.dto.LeaveDTO;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
 import com.example.universitystudentportal.generics.service.GenericService;
-import com.example.universitystudentportal.mapper.LeaveMapper;
 import com.example.universitystudentportal.model.Leave;
 import com.example.universitystudentportal.model.LeaveStatus;
 import com.example.universitystudentportal.model.Lecturer;

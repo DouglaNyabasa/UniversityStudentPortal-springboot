@@ -27,7 +27,7 @@ public class ImageResource {
     }
 
 
-    @PostMapping
+    @PostMapping("/{uploadImage}")
     public ResponseEntity<?> uploadImage(@RequestParam("image")MultipartFile file) throws IOException {
        String imageUpload = imageServiceImpl.uploadImage(file);
         return ResponseEntity.status(HttpStatus.OK).body(imageUpload);

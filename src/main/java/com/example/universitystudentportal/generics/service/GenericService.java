@@ -1,9 +1,12 @@
 package com.example.universitystudentportal.generics.service;
 
+import com.example.universitystudentportal.dto.LoginRequest;
 import com.example.universitystudentportal.generics.dto.GenericDTO;
-import com.example.universitystudentportal.generics.mapper.EntityMapper;
 import com.example.universitystudentportal.model.BaseID;
 import com.example.universitystudentportal.generics.repository.GenericRepository;
+import com.example.universitystudentportal.response.ApiResponse;
+import com.example.universitystudentportal.response.AuthenticatedUser;
+import lombok.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -12,6 +15,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -24,14 +28,16 @@ import java.util.Optional;
  * created on 7/20/2023
  */
 
-public abstract class GenericService <T extends BaseID, ID extends Long, DTO extends GenericDTO> implements IGenericService<T, ID>{
+public  abstract class GenericService <T extends BaseID, ID extends Long, DTO extends GenericDTO> implements IGenericService<T, ID>{
 
     private final GenericRepository<T> repository;
     private final Logger logger = LoggerFactory.getLogger(GenericService.class);
 
     protected GenericService(GenericRepository<T> repository) {
         this.repository = repository;
+
     }
+
 
        @Override
     public ResponseEntity<Object> save(T entity) {
@@ -59,7 +65,9 @@ public abstract class GenericService <T extends BaseID, ID extends Long, DTO ext
             return ResponseEntity.noContent().build();
         }
 
-//    @Override
+
+
+    //    @Override
 //    public ResponseEntity<Object> update(T entityToUpdate) {
 //        // TODO Auto-generated method stub
 //        System.out.println("entityToUpdate = " + entityToUpdate);

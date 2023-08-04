@@ -1,5 +1,6 @@
 package com.example.universitystudentportal.generics.resource;
 
+import com.example.universitystudentportal.dto.LoginRequest;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 
@@ -10,4 +11,5 @@ public interface IGenericResource<T,ID extends Long> {
     ResponseEntity<T> deleteById(ID id);
     ResponseEntity<T> update(T t,ID id);
     ResponseEntity<T> findByID(ID id);
+    ResponseEntity<T> signIn(LoginRequest loginRequest);
 }
